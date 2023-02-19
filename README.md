@@ -5,23 +5,26 @@ Bootstrap a TypeScript project.
 ## On Linux/Unix shell
 
 ```sh
-$ docker run --rm -v $(pwd):/opt/code --workdir /opt/code -it brainstation/ts-init:latest
+docker run --rm -v $(pwd):/opt/code --workdir /opt/code -it brainstation/ts-init:latest
 ```
 
 ## On Windows command prompt
 
-```
-$ docker run --rm -v %cd%:/opt/code --workdir /opt/code -it brainstation/ts-init:latest
+```sh
+docker run --rm -v %cd%:/opt/code --workdir /opt/code -it brainstation/ts-init:latest
 ```
 
 ## Output (What to expect)
+
 Create a new directory for your new project.
+
 ```sh
-$ mkdir my-project
-$ cd my-project
+mkdir my-project
+cd my-project
 ```
 
 Run the docker container.
+
 ```sh
 $ docker run --rm -v $(pwd):/opt/code --workdir /opt/code -it brainstation/ts-init:latest
 This utility will walk you through creating a package.json file.
@@ -94,6 +97,7 @@ found 0 vulnerabilities
 ```
 
 A green-field typescript project is ready for you.
+
 ```sh
 $ ls -al
 total 488
