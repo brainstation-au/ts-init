@@ -3,8 +3,12 @@ services:
   sh: &base
     image: node:lts-alpine
     volumes:
-      - .:/opt/code
-    working_dir: /opt/code
+      - ..:/opt/code
+      - $HOME/.aws:/root/.aws
+    working_dir: /opt/code/cdk
+    environment:
+      - AWS_DEFAULT_REGION=ap-southeast-2
+      - AWS_PROFILE
     command: sh
 
   install:
@@ -18,3 +22,16 @@ services:
   test:
     <<: *base
     command: npm test
+
+  deploy:
+    <<: *base
+    environment:
+      - AWS_ACCESS_KEY_ID
+      - AWS_SECRET_ACCESS_KEY
+      - AWS_SECURITY_TOKEN
+      - AWS_SESSION_TOKEN
+      - AWS_DEFAULT_REGION=ap-southeast-2
+      - AWS_PROFILE
+      - LAMBDA_ASSET_PATH
+      - POLICY_PATH
+    command: npm run deploy

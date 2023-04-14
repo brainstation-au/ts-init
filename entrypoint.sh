@@ -13,6 +13,12 @@ npm install --save-dev \
   eslint \
   @types/eslint \
   @typescript-eslint/eslint-plugin \
-  @typescript-eslint/parser
+  @typescript-eslint/parser \
+  aws-cdk \
+  ts-node
+
+npm install --save \
+  aws-cdk-lib \
+  constructs
 
 cp -a /tmp/ts-init/resources/. .

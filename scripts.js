@@ -6,6 +6,8 @@ const package = JSON.parse(fs.readFileSync('./package.json', 'utf-8'));
 
 package.scripts = {
   compile: 'rm -rf dist && tsc -p tsconfig.app.json',
+  deploy: 'cdk deploy',
+  synth: 'cdk synth',
   lint: 'tsc --noEmit && eslint "**/*.{js,ts}" --quiet',
   test: 'jest --forceExit --detectOpenHandles',
 };
