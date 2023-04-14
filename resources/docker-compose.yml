@@ -32,6 +32,4 @@ services:
       - AWS_SESSION_TOKEN
       - AWS_DEFAULT_REGION=ap-southeast-2
       - AWS_PROFILE
-      - LAMBDA_ASSET_PATH
-      - POLICY_PATH
     command: npm run deploy
