@@ -7,6 +7,10 @@ services:
       - $HOME/.aws:/root/.aws
     working_dir: /opt/code
     environment:
+      - AWS_ACCESS_KEY_ID
+      - AWS_SECRET_ACCESS_KEY
+      - AWS_SECURITY_TOKEN
+      - AWS_SESSION_TOKEN
       - AWS_DEFAULT_REGION=ap-southeast-2
       - AWS_PROFILE
     command: sh
@@ -25,11 +29,4 @@ services:
 
   deploy:
     <<: *base
-    environment:
-      - AWS_ACCESS_KEY_ID
-      - AWS_SECRET_ACCESS_KEY
-      - AWS_SECURITY_TOKEN
-      - AWS_SESSION_TOKEN
-      - AWS_DEFAULT_REGION=ap-southeast-2
-      - AWS_PROFILE
     command: npm run deploy
